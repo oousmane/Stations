@@ -1,7 +1,9 @@
 ---
 title: "Carte interactive des stations AWS"
 author: "Ousmane"
-format: html
+format: 
+  html:
+    page-layout: full
 execute:
   echo: true
   warning: false
@@ -51,7 +53,7 @@ tm_shape(data_sf) +
 
 ```{r}
 library(leaflet)
-
+#layout:full
 leaflet() %>%
   addProviderTiles(providers$OpenStreetMap) %>%
   addPolygons(data = bvn, fillOpacity = 0.2, color = "blue") %>%
