@@ -32,7 +32,7 @@ reclim <- read_sf("reclim/zone_reclim.shp") %>%
 # Nettoyer et filtrer les données, transformer en objet sf
 data_sf <- data %>%
   drop_na(lon, lat) %>%
-  filter(station != "Bazega", station != "Vallée-Du-Kou") %>%
+  filter(station != "Bazega", station != "Vallée-Du-Kou", type !="manual") %>%
   st_as_sf(coords = c("lon", "lat"), crs = 4326) %>%
   st_filter(bvn)
 
